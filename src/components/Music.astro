@@ -1,0 +1,20 @@
+<audio id="audioPlayer" src="/audio/audio.mp3" autoplay></audio>
+
+<script>
+    document.addEventListener("astro:page-load", () => {
+        const audioPlayer = document.getElementById(
+            "audioPlayer",
+        ) as HTMLAudioElement;
+        const playPauseBtn = document.getElementById("playPauseBtn");
+
+        playPauseBtn!.addEventListener("click", () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playPauseBtn!.textContent = "Pause";
+            } else {
+                audioPlayer.pause();
+                playPauseBtn!.textContent = "Play";
+            }
+        });
+    });
+</script>
