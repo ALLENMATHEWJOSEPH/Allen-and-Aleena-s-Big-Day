@@ -1,4 +1,4 @@
-<audio id="myAudio">
+<audio id="myAudio" autoplay muted>
     <source src="./audio/audio.mp3" type="audio/mpeg" />
     Your browser does not support the audio element.
 </audio>
@@ -10,8 +10,14 @@
         // console.log(audio);
 
         setTimeout(() => {
-            audio.play()
-        }, 1000);
+
+        // console.log(audio.muted)
+        audio.muted = false;
+        audio.play();
+        // console.log(audio.muted)
+
+        // console.log(audio.paused)
+        }, 500);
 
         // audio.muted = true;
     });
