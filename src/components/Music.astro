@@ -1,11 +1,18 @@
-<audio id="audioPlayer" src="/audio/audio.mp3" autoplay></audio>
+<audio id="myAudio">
+    <source src="./audio/audio.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+</audio>
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const audioPlayer = document.getElementById(
-            "audioPlayer",
-        ) as HTMLAudioElement;
+        const audio = document.getElementById("myAudio") as HTMLAudioElement;
 
-        audioPlayer.play();
+        // console.log(audio);
+
+        setTimeout(() => {
+            audio.play()
+        }, 1000);
+
+        // audio.muted = true;
     });
 </script>
